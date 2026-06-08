@@ -1,0 +1,28 @@
+ElderAlert v1 - Phone GitHub Instructions
+
+Important: The zip intentionally does NOT include gradlew or a gradle folder.
+GitHub Actions installs Gradle automatically using this line in the workflow:
+  gradle/actions/setup-gradle@v4
+
+The workflow file GitHub needs is:
+  .github/workflows/build-apk.yml
+
+On phones, folders starting with a dot, like .github, may be hidden.
+If GitHub Actions only shows "create workflow", do this:
+
+1. In your GitHub repo, tap Actions.
+2. Tap "set up a workflow yourself" or "New workflow".
+3. Replace everything with the contents of VISIBLE_COPY_build-apk.yml.
+4. Commit it as:
+   .github/workflows/build-apk.yml
+5. Go back to Actions.
+6. Open "Build Android APK".
+7. Tap "Run workflow".
+8. Download the artifact named ElderAlert-debug-apk.
+
+Your repo needs these project files/folders:
+  app/
+  build.gradle
+  settings.gradle
+  .github/workflows/build-apk.yml
+
